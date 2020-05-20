@@ -32,7 +32,8 @@ namespace autoapp
 namespace projection
 {
 
-class InputDevice: public QObject, public IInputDevice, boost::noncopyable
+ class InputDevice: public QObject, public IInputDevice,
+ 	boost::asio::noncopyable
 {
     Q_OBJECT
 

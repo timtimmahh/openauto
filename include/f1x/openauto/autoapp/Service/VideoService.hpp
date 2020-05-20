@@ -48,10 +48,12 @@ public:
     void onChannelOpenRequest(const aasdk::proto::messages::ChannelOpenRequest& request) override;
     void onAVChannelSetupRequest(const aasdk::proto::messages::AVChannelSetupRequest& request) override;
     void onAVChannelStartIndication(const aasdk::proto::messages::AVChannelStartIndication& indication) override;
-    void onAVMediaWithTimestampIndication(aasdk::messenger::Timestamp::ValueType timestamp, const aasdk::common::DataConstBuffer& buffer) override;
+	void onAVChannelStopIndication(const aasdk::proto::messages::AVChannelStopIndication &indication) override;
+	void onAVMediaWithTimestampIndication(aasdk::messenger::Timestamp::ValueType timestamp, const aasdk::common::DataConstBuffer& buffer) override;
     void onAVMediaIndication(const aasdk::common::DataConstBuffer& buffer) override;
     void onVideoFocusRequest(const aasdk::proto::messages::VideoFocusRequest& request) override;
     void onChannelError(const aasdk::error::Error& e) override;
+
 
 private:
     using std::enable_shared_from_this<VideoService>::shared_from_this;
